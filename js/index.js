@@ -1,21 +1,44 @@
 
+import {adView} from "./views.js"
 
-const loader = document.querySelector(".lds-ring");
+
+
+window.addEventListener("DOMContentLoaded", event =>{
+    const loader = document.querySelector(".lds-ring");
 
 loader.classList.add("hidden");
 
 
-for(let i=0; i<20; i++){
-    const ad= document.createElement("article");
-    const adHTML= ` <div class="ad">
-    <strong class="ad-name">Zapatillas Salomon</strong>
-    <div class="on-sale">Vendo</div>
-    <div class="price">65 €</div>
+const adsList=[
+    {
+        name: " Zapatillas Salomon",
+        price: 35,
+        onSale: true
+    },
+    {
+        name: " Zapatillas Salomon XTECH",
+        price: 32,
+        onSale: false
+    },
+    {
+        name: " Bicicleta BH TOP",
+        price: 312,
+        onSale: true
+    }
 
-</div>`;
+];
 
-ad.innerHTML = adHTML;
-const adsList= document.querySelector(".ads-list");
-adsList.appendChild(ad);
+const ads= document.querySelector(".ads-list");
+
+for(const ad of adsList){
+    const adElement= document.createElement("article");
+    const adHTML= adView(ad);
+
+adElement.innerHTML = adHTML;
+ads.appendChild(adElement);
 
 }
+
+})
+
+
