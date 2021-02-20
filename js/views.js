@@ -3,9 +3,9 @@
 export  const adView = (ad)=>{
     let onSale;
     if(ad.onSale === true){
-        onSale = "En venta"
+        onSale = "En venta:"
     }else{
-        onSale= "Compro"
+        onSale= "Ofrezco máximo:"
     }
     return ` <div class="ad">
     <strong class="ad-name">${ad.name}</strong>

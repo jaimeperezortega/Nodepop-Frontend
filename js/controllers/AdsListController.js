@@ -1,7 +1,8 @@
 import BaseController from "./BaseController.js";
 import dataService from "../services/DataService.js";
-import {adView} from "../views.js" 
-import loaderController from "./LoaderController.js"
+import {adView} from "../views.js" ;
+
+
 
 
 export default class  AdsListController extends BaseController{
@@ -18,7 +19,7 @@ export default class  AdsListController extends BaseController{
     async loadAds(){ //Método para cargar los anuncios de forma asíncrona a través de mi servicio de DataService
          
     //Consigo los anuncios a través del método de mi dataService getAds(). Como es asíncrono y lo que me devuelve ese método es una promesa, debo usar await delante. Y al usar await aquí, debo usar async en la funcion
-     this.loader.showLoader();
+     this.publish(this.events.START_LOADING, {})
      try { // Si el servidor responde (ya sea una respuesta correcta o incorrecta)
         const adsList= await dataService.getAds();
         this.render(adsList);
@@ -26,12 +27,11 @@ export default class  AdsListController extends BaseController{
 
      } catch (error) { //Si el servidor no responde por un problema de conexión cazamos aquí el error
         console.error(error);
+        this.publish(this.events.ERROR, error)
          
      } finally{
          //Esto se ejecuta siempre, vaya bien o vaya mal
-         this.loader.hideLoader();
+         this.publish(this.events.FINISH_LOADING, {})
      }
-
     }
 }
-
