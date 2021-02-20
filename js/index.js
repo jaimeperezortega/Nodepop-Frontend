@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", async event =>{
     
     const errorsElement = document.querySelector(".global-errors");
     const errorsController = new ErrorController(errorsElement);
-    errorsController.showError("Que pasa madafaka!!!");
+    errorsController.showError("Ehhhhhh GOOOOOOL!!!");
 
      
 
