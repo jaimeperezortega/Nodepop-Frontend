@@ -1,43 +1,31 @@
 
-import {adView} from "./views.js"
+import {adView} from "./views.js" //Importo las vistas
+import dataService from "./services/DataService.js" //Importo el servicio que me sirve como capa de abstracción para obtener datos de un backend. Lo importo con el nombre que quiera porque es un default
+import AdsListController from "./controllers/AdsListController.js";
+import LoaderController from "./controllers/LoaderController.js";
+import ErrorController from "./controllers/ErrorController.js";
 
 
 
-window.addEventListener("DOMContentLoaded", event =>{
+window.addEventListener("DOMContentLoaded", async event =>{
+
+
     const loader = document.querySelector(".lds-ring");
+    const loaderController = new LoaderController(loader);
 
-loader.classList.add("hidden");
 
+    //Selecciono el elemento del DOM al cual le voy a asignar el controlador de los anuncios
+    const adsListElement = document.querySelector(".ads-list");
+   //Asigno el controlador al elemento del DOm donde renderizo los anuncios
+    const adsListController = new AdsListController(adsListElement);
+    adsListController.loader = loaderController;
+    adsListController.loadAds();
+    
+    const errorsElement = document.querySelector(".global-errors");
+    const errorsController = new ErrorController(errorsElement);
+    errorsController.showError("Que pasa madafaka!!!");
 
-const adsList=[
-    {
-        name: " Zapatillas Salomon",
-        price: 35,
-        onSale: true
-    },
-    {
-        name: " Zapatillas Salomon XTECH",
-        price: 32,
-        onSale: false
-    },
-    {
-        name: " Bicicleta BH TOP",
-        price: 312,
-        onSale: true
-    }
-
-];
-
-const ads= document.querySelector(".ads-list");
-
-for(const ad of adsList){
-    const adElement= document.createElement("article");
-    const adHTML= adView(ad);
-
-adElement.innerHTML = adHTML;
-ads.appendChild(adElement);
-
-}
+     
 
 })
 
