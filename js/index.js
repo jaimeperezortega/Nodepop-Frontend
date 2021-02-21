@@ -4,6 +4,7 @@ import dataService from "./services/DataService.js" //Importo el servicio que me
 import AdsListController from "./controllers/AdsListController.js";
 import LoaderController from "./controllers/LoaderController.js";
 import ErrorController from "./controllers/ErrorController.js";
+import FixedBottomButtonsController from "./controllers/FixedBottomButtonsController.js";
 
 
 
@@ -24,9 +25,10 @@ window.addEventListener("DOMContentLoaded", async event =>{
     const errorsElement = document.querySelector(".global-errors");
     const errorsController = new ErrorController(errorsElement);
 
-
+    const newAdButtons = document.querySelector(".new-ad");
+    const newAdButtonsController = new FixedBottomButtonsController(newAdButtons);
      
 
-})
+});
 
 

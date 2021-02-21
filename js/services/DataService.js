@@ -34,6 +34,7 @@ export default{
             if(response.ok){ //Si la respuesta del servidor es correcta (tipo 200)
                 const data = await response.json();
                 return data
+                //Si quisiera modelizar los datos que recibo desde el backend para que tengan otra estructura, puedo hacer un return data.map para devolver la estructura de datos que me interese. En el backend los datos pueden tener otras propiedades, nombres, etc
             } else{ //Si la respuesta del servidor es incorrecta (tipo 400)
                 throw new Error(`HTTP Error: ${response.status}`)
             }
@@ -57,6 +58,11 @@ export default{
 
     getToken: async function(){
         return localStorage.getItem(TOKEN_KEY);
+    },
+
+    isUserLogged: async function (){
+        const token = await this.getToken();
+        return token !== null;// Si el token no es nulo, el usuario está autenticado, pero si es nulo no está autenticado. Es una expresión booleana que devuelve true o false
     }
 
 };

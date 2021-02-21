@@ -47,13 +47,27 @@
 }
 
 /* Cards */
-.card { margin: 10px auto; }
+.card { 
+    margin: 10px auto; 
+    
+}
+
+.ads-list{
+    margin: 50px;
+}
 
 /* Global errors */
 .global-errors {
   padding: 20% 10%;
 }
 
+/* New  ad or login */
+
+.new-ad{
+    position:fixed;
+    right:20px;
+    bottom: 20px
+}
 
 /* Titles */
 h1{
