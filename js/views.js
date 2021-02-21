@@ -9,7 +9,7 @@ export  const adView = (ad)=>{
     }
     return ` <div class="ad">
     <strong class="ad-name">${ad.name}</strong>
-    <div class="on-sale">${onSale} </div>
+    <div class="on-sale">${onSale}  </div>
     <div class="price">${ad.price} €</div>
 
 </div> <hr>`;
