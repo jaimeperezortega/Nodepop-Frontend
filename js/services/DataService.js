@@ -1,7 +1,9 @@
 
 
-const BASE_URL = "http://localhost:8000"
+const BASE_URL = "http://localhost:8000";
+const TOKEN_KEY = "token";
 
+//En los servicios no usar arrow functions al definir los métodos
 
 export default{
 
@@ -47,7 +49,15 @@ export default{
       
         const url = `${BASE_URL}/auth/login`;
         return await this.post(url,user);
+    },
+
+    saveToken: async function(token){
+        localStorage.setItem(TOKEN_KEY, token);
+    },
+
+    getToken: async function(){
+        return localStorage.getItem(TOKEN_KEY);
     }
 
-}
+};
        
