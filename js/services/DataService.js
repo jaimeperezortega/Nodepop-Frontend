@@ -10,10 +10,17 @@ export default{
     post: async function (url, postData)  {
         const config = {
             method: "POST",
-            headers:{"Content-Type": "application/json"}, //Informo al servidor que los datos que le estoy enviando son en formato JSON
+            headers:{'Content-Type': 'application/json'}, //Informo al servidor que los datos que le estoy enviando son en formato JSON
             body: JSON.stringify(postData)// convierto el objeto de ususarios a un JSON
         };
+       
         
+        const token = await this.getToken();
+       
+        
+        if (token) {
+            config.headers['Authorization'] = `Bearer ${token}`;
+        }
         const response = await fetch(url, config);
         const data = await response.json(); // recibo respuesta del servidor ya sea OK o sea un error. Por ejemplo que ese usuario ya existe
         if (response.ok){
@@ -63,7 +70,16 @@ export default{
     isUserLogged: async function (){
         const token = await this.getToken();
         return token !== null;// Si el token no es nulo, el usuario está autenticado, pero si es nulo no está autenticado. Es una expresión booleana que devuelve true o false
+    },
+
+    saveAd: async function(ad){
+        const url = `${BASE_URL}/api/ads`;
+        console.log(ad);
+        return await this.post(url, ad);
+        
     }
 
 };
+
+
        
