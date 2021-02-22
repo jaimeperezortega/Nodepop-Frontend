@@ -5,12 +5,12 @@ export  const adView = (ad)=>{
     if(ad.onSale === true){
         onSale = "En venta:"
     }else{
-        onSale= "Ofrezco:"
+        onSale= "Ofrezco máximo:"
     }
     return ` <div class="ad">
     <strong class="ad-name">${ad.name}</strong>
-    <div class="on-sale">${onSale}  </div>
-    <div class="price">${ad.price} €</div>
+    <div class="on-sale">${onSale} ${ad.price} €  </div>
+    <div clas="adText" style="font-style: italic; padding-top:10px;"> ${ad.adText}</div>
 
 </div> <hr>`;
 

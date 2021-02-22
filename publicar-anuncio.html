@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Anuncio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Mi loader ring no va a estar hidden por defecto porque necesito que se muestre hasta que autentiquemos que el usuario está loggeado -->
+    <div class="lds-ring "><div></div><div></div><div></div><div></div></div> 
+
+    <div class="global-errors hidden"></div>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <h1 class="title">Publicar Anuncio</h1>
+                <form>
+
+                    
+                    <input name="ad-name" class="input is-info" type="text" placeholder="Nombre del producto" required> 
+
+                    <label name="on-sale-true" class="checkbox" id="compro" value="compro" required>
+                        <input type="checkbox" name= "on-sale-true">
+                        Vendo
+                      </label>
+
+                      <label name="on-sale-false" class="checkbox" id="vendo" value="vendo" required>
+                        <input type="checkbox" name="on-sale-false">
+                        Compro
+                      </label>
+
+                      <input name="on-sale-true" class="input is-info" type="text" placeholder="Precio en euros">
+
+                      <textarea name="ad-price" class="textarea is-info" placeholder="Describe tu anuncio aquí"></textarea>
+
+                      <div class="file">
+                        <label class="file-label">
+                          <input class="file-input" type="file" name="file" accept="image/*">
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Subir foto
+                            </span>
+                          </span>
+                        </label>
+                      </div>
+
+
+                    
+
+                    <button class="button is-primary is-pulled-right" disabled>Publicar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/publish-ad.js"></script>
+</body>
+</html>
