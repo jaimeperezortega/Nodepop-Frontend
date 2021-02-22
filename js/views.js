@@ -10,6 +10,7 @@ export  const adView = (ad)=>{
     return ` <div class="ad">
     <strong class="ad-name">${ad.name}</strong>
     <div class="on-sale">${onSale} ${ad.price} €  </div>
+    <div> Fecha de publicación ${ad.updatedAt}</div>
     <div clas="adText" style="font-style: italic; padding-top:10px;"> ${ad.adText}</div>
 
 </div> <hr>`;

@@ -4,7 +4,7 @@ import BaseController from "./BaseController.js";
 import dataService from "../services/DataService.js"
 
 
-export default class SellingAdController extends BaseController{
+export default class BuyingAdController extends BaseController{
     constructor(element){
         super(element);
         this.checkIfUserIsLogged();
@@ -33,7 +33,7 @@ export default class SellingAdController extends BaseController{
         //Selecciono primero los campos de texto (tanto los input text como los textarea)
 
 
-        const button = this.element.querySelector(".selling-button");
+        const button = this.element.querySelector("button");
 
         this.element.querySelectorAll(".input-text").forEach(inputText =>{ //Seleccionamos todos los elementos input del formulario
             
@@ -57,7 +57,32 @@ export default class SellingAdController extends BaseController{
 
     
             })
+        });
+
+        //Controlamos cuando se envía el formulario
+        this.element.addEventListener("submit",async event =>{
+            event.preventDefault(); //Cancelamos el comportamiento por defecto de cuando se envía el formulario
+            const ad= {
+                name:this.element.elements.name.value ,
+                price: this.element.elements.price.value ,
+                onSale: true,
+                adText: this.element.elements.description.value
+                
+            }
+
+            console.log(ad);
+            this.publish(this.events.START_LOADING);
+            try {
+                await dataService.saveAd(ad);
+                window.location.href="/?mensaje= adOk"
+            } catch (error) {
+                this.publish(this.events.ERROR, error)
+            } finally{
+                this.publish(this.events.FINISH_LOADING);
+            }
         })
+        
+
 
     }
 }

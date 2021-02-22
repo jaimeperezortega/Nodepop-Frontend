@@ -36,7 +36,7 @@ export default{
     getAds: async function (){
         
       //Aquí solo capturamos el error  cuando el servidor sí responde. Si el servidor no responde, capturaremos ese error desde fuera (en index.js cuando llamamos a este método de nuestro DAta Servie)
-      const url = `${BASE_URL}/api/ads`;      
+      const url = `${BASE_URL}/api/ads?_sort=id&_order=desc`; //Para ordenar los anuncios de forma descendente (los más nuevos primero)      
       const response = await fetch(url);
             if(response.ok){ //Si la respuesta del servidor es correcta (tipo 200)
                 const data = await response.json();
