@@ -17,25 +17,17 @@
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">
-                <h1 class="title">Publicar Anuncio</h1>
-                <form>
+                <h1 class="title">Publicar Anuncio de Compra</h1>
+                <form class="buying-form">
 
                     
-                    <input name="ad-name" class="input is-info" type="text" placeholder="Nombre del producto" required> 
+                    <input name="ad-name" class="input is-info ad-name input-text" type="text" placeholder="Nombre del producto" required> 
 
-                    <label name="on-sale-true" class="checkbox" id="compro" value="compro" required>
-                        <input type="checkbox" name= "on-sale-true">
-                        Vendo
-                      </label>
+                  
 
-                      <label name="on-sale-false" class="checkbox" id="vendo" value="vendo" required>
-                        <input type="checkbox" name="on-sale-false">
-                        Compro
-                      </label>
+                      <input name="on-sale-true" class="input is-info input-text" type="text" placeholder="Precio máximo dispuesto a pagar" required>
 
-                      <input name="on-sale-true" class="input is-info" type="text" placeholder="Precio en euros">
-
-                      <textarea name="ad-price" class="textarea is-info" placeholder="Describe tu anuncio aquí"></textarea>
+                      <textarea name="ad-price" class="textarea is-info input-text" placeholder="Describe el producto que quieres comprar aquí" required></textarea>
 
                       <div class="file">
                         <label class="file-label">
@@ -55,6 +47,38 @@
                     
 
                     <button class="button is-primary is-pulled-right" disabled>Publicar</button>
+                </form>
+                <hr>
+                <h1 class="title">Publicar Anuncio de Venta</h1>
+                <form class="selling-form">
+
+                    
+                    <input name="ad-name" class="input is-info ad-name input-text" type="text" placeholder="Nombre del producto" required> 
+
+                  
+
+                      <input name="on-sale-true" class="input is-info input-text" type="text" placeholder="Precio de venta" required>
+
+                      <textarea name="ad-price" class="textarea is-info input-text" placeholder="Describe el producto que quieres vender aquí" required></textarea>
+
+                      <div class="file">
+                        <label class="file-label">
+                          <input class="file-input" type="file" name="file" accept="image/*">
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Subir foto
+                            </span>
+                          </span>
+                        </label>
+                      </div>
+
+
+                    
+
+                    <button class="button is-primary is-pulled-right selling-button" disabled>Publicar</button>
                 </form>
             </div>
         </div>

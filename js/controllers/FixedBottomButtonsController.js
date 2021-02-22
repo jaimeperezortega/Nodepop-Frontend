@@ -14,7 +14,11 @@ export default class FixedBottomButtonsController extends BaseController {
         if(userIsLogged){
             //mostrar botón para publicar anuncio
             const newAdButton = this.element.querySelector(".new-ad-button");
+
             newAdButton.classList.remove("is-hidden");
+
+            
+            
         } else{
             //mostrar botón de login o de registro
             const loginRegisterButtons = this.element.querySelector(".login-register-buttons");
