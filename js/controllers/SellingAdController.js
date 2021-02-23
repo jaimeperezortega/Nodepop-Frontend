@@ -66,11 +66,16 @@ export default class BuyingAdController extends BaseController{
                 name:this.element.elements.name.value ,
                 price: this.element.elements.price.value ,
                 onSale: true,
-                adText: this.element.elements.description.value
+                adText: this.element.elements.description.value,
+                image: null
+
                 
             }
+            if(this.element.elements.image.files.length >0){ //Con este condicional compruebo si hay algún archivo
+                ad.image = this.element.elements.image.files[0]; //En cas de que sea así se lo añado al objeto ad con la propiedad image
+            };
 
-            console.log(ad);
+            
             this.publish(this.events.START_LOADING);
             try {
                 await dataService.saveAd(ad);
