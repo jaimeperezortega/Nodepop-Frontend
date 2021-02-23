@@ -15,7 +15,7 @@ export default class BuyingAdController extends BaseController{
     async checkIfUserIsLogged(){
         const userIsLogged = await dataService.isUserLogged();
         if(!userIsLogged){
-            window.location.href = "./login.html";
+            window.location.href = "./login.html?next=/new-ad.html"; //Utilzo los query params para comunicar las páginas entre sí
         } else {
             this.publish(this.events.FINISH_LOADING);
         }

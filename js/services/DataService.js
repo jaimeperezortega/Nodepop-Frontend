@@ -36,12 +36,23 @@ export default{
     getAds: async function (){
         
       //Aquí solo capturamos el error  cuando el servidor sí responde. Si el servidor no responde, capturaremos ese error desde fuera (en index.js cuando llamamos a este método de nuestro DAta Servie)
-      const url = `${BASE_URL}/api/ads?_sort=id&_order=desc`; //Para ordenar los anuncios de forma descendente (los más nuevos primero)      
+      const url = `${BASE_URL}/api/ads?_sort=id&_order=desc`; //Para ordenar los anuncios de forma descendente (los más nuevos primero) . Para ello, el backend me tiene que permitir ordenarlo de esta forma     
       const response = await fetch(url);
             if(response.ok){ //Si la respuesta del servidor es correcta (tipo 200)
                 const data = await response.json();
-                return data
-                //Si quisiera modelizar los datos que recibo desde el backend para que tengan otra estructura, puedo hacer un return data.map para devolver la estructura de datos que me interese. En el backend los datos pueden tener otras propiedades, nombres, etc
+                
+                return data.map(ad=>{
+                    return{
+                        name: ad.name.replace(/(<([^>]+)>)/gi, ""),
+                        onSale: ad.onSale,
+                        price: ad.price.replace(/(<([^>]+)>)/gi, ""),
+                        adText: ad.adText.replace(/(<([^>]+)>)/gi, ""),
+                        updatedAt: ad.updatedAt
+                    }
+                    
+
+                })
+                //Modelizamos los datos que recibo desde el backend para que tengan otra estructura, puedo hacer un return data.map para devolver la estructura de datos que me interese. En el backend los datos pueden tener otras propiedades, nombres, etc. Aemás le meto una expresión regular en los campos de texto parw evitar inyecciones de código malicioso
             } else{ //Si la respuesta del servidor es incorrecta (tipo 400)
                 throw new Error(`HTTP Error: ${response.status}`)
             }

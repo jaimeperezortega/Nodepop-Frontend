@@ -20,7 +20,13 @@ export default class LoginFormController extends BaseController{
             try {
                 const data = await dataService.login(user)
                dataService.saveToken(data.accessToken); //Guardamos el token del usuario en nuestro local storage a través del método que hemos definido en el servicio de Data Service
-               window.location.href="/";
+               let next = "/";
+               const queryParams = window.location.search.replace("?", ""); // Est lo que consigue es que si me pasan ?next=otrapagina ---> next=otrapagina . le quita el interrogante
+               const queryParamsParts= queryParams.split("=");
+               if(queryParamsParts.length >=2 && queryParamsParts[0] === "next"){
+                next = queryParamsParts[1];
+               }
+               window.location.href= next;
             } catch (error) {
                 this.publish(this.events.ERROR, error);
             } finally{

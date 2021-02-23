@@ -52,8 +52,28 @@
     
 }
 
+/* 
+Contenedor de los anuncios */
 .ads-list{
     margin: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Cada anuncio */
+article{
+  max-width: 350px;
+  min-width: 350px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right:30px;
+  margin:10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lightslategray;
+  
 }
 
 /* Global errors */
