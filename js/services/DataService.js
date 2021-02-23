@@ -7,9 +7,21 @@ const TOKEN_KEY = "token";
 
 export default{
 
-    post: async function (url, postData, json=true)  {
+    post: async function(url, postData, json=true){
+        return await this.request("POST", url, postData, json);
+    },
+
+    delete: async function(url){
+        return await this.request("DELETE", url, {});
+    },
+
+    put: async function(url, putData, json =true){
+        return await this.request("PUT", url, putData, json);
+    },
+
+    request: async function (method, url, postData, json=true)  {
         const config = {
-            method: "POST",
+            method: method,
             headers:{}, 
             body: null
         };
@@ -51,6 +63,7 @@ export default{
                 return data.map(ad=>{
                     const user = ad.user || {};
                     return{
+                        id: ad.id,
                         name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                         onSale: ad.onSale,
                         price: ad.price.replace(/(<([^>]+)>)/gi, ""),
@@ -134,6 +147,12 @@ export default{
             return null;
         }
        
+    },
+
+   
+    deleteAd: async function(ad) {
+        const url = `${BASE_URL}/api/ads/${ad.id}`;
+        return await this.delete(url);
     }
 
 };

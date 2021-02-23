@@ -12,6 +12,16 @@ export default class  AdsListController extends BaseController{
         for (const ad of adsList){ //Bucle for para recorrer los anuncios previamente cargados por el dataService.getAds()
             const article = document.createElement("article"); // Creamos el elemento HTML article
             article.innerHTML = adView(ad); //Asignamos que su HTML será el definido en la vista de views.js
+            const deleteButton = article.querySelector("button");
+            if(deleteButton){
+                deleteButton.addEventListener("click", async event =>{
+                    const deleteConfirmed = confirm("¿Seguro que quieres borrar el anuncio?");
+                    if(deleteConfirmed){
+                        await dataService.deleteAd(ad);
+                    }
+                    
+                })
+            }
             this.element.appendChild(article); //Al elemento que instanciamos desde index.js (en este caso el que lleva la etiqueta css de ads-list le añadimos el elemento article definido más arriba)
         }
     }
