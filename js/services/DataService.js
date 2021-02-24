@@ -51,6 +51,20 @@ export default{
     },
 
 
+    getSingleAd: async function(){
+        const url = `${BASE_URL}/api/ads/18`;
+        const response = await fetch(url);
+            if(response.ok){ 
+                const data = await response.json();
+                return data;        
+                
+            } else{ 
+                throw new Error(`HTTP Error: ${response.status}`)
+            }
+            
+
+    },
+    
     getAds: async function (){
         const currentUser = await this.getUser();
         

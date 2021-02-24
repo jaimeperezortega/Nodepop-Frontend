@@ -107,6 +107,19 @@ article{
     bottom: 20px
 }
 
+.return-ad-list{
+  position:fixed;
+    right:20px;
+    bottom: 20px
+}
+
+.ad-info{
+  display:flex;
+  justify-content: center;
+  max-width: 800px;
+  min-width: 600px;
+}
+
 /* Titles */
 h1{
     text-align:center;
