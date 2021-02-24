@@ -13,15 +13,17 @@ export  const adView = (ad)=>{
   }
     let onSale;
     if(ad.onSale === true){
-        onSale = "En venta:"
+        onSale = "<div class='venta'>En venta:"
     }else{
-        onSale= "Ofrezco máximo:"
+        onSale= "<div class='compra'>Ofrezco máximo:"
     }
-    return ` <a href = "/ficha-anuncio.html"><div class="ad">
+
+    //<a href = "/ficha-anuncio.html"> </a>
+    return ` <div class="ad">
     <strong class="ad-name" style="font-size:20px; color:black;">${ad.name}</strong>
-    <div class="on-sale" style="color:green"; padding-top:10px;">${onSale} ${ad.price} €  </div>
+    <div class="on-sale"  padding-top:10px;">${onSale} ${ad.price} €  </div>
     
-    ${imgHTML}</a>
+    ${imgHTML}
     ${deleteButtonHTML}
 
     
@@ -45,10 +47,11 @@ export  const adDetailedInfo = (ad)=>{
         onSale= "Ofrezco máximo:"
     }
     return ` <div class="ad">
+    <div class="publish-date"><b> Fecha de publicación:</b> ${ad.updatedAt} </div>
     <strong class="ad-name" style="font-size:20px; color:black;">${ad.name}</strong>
     <div class="on-sale" style="color:green"; padding-top:10px;">${onSale} ${ad.price} €  </div>
-    <div>${ad.adText} </div>
-    <div> Fecha de publicación: ${ad.updatedAt} </div>
+    <div class="ad-text">${ad.adText} </div>
+    
     
     ${imgHTML}
     

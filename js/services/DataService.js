@@ -52,7 +52,8 @@ export default{
 
 
     getSingleAd: async function(){
-        const url = `${BASE_URL}/api/ads/18`;
+        const queryParams = window.location.search.replace('?id=', '');
+        const url = `${BASE_URL}/api/ads/${queryParams}`;
         const response = await fetch(url);
             if(response.ok){ 
                 const data = await response.json();

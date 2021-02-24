@@ -11,7 +11,15 @@ export default class  AdsListController extends BaseController{
     render(adsList){ //Método para renderizar el listado de anuncios
         this.element.innerHTML = ""; // Borramos primero cualquier anuncios que pueda verse en pantalla antes de renderizar los nuevos
         for (const ad of adsList){ //Bucle for para recorrer los anuncios previamente cargados por el dataService.getAds()
+
+
             const article = document.createElement("article"); // Creamos el elemento HTML article
+            
+            article.addEventListener("click", event=>{
+                console.log(ad.id);
+                window.location.href = '/ficha-anuncio.html?id='+ ad.id;
+                
+            });
             article.innerHTML = adView(ad); //Asignamos que su HTML será el definido en la vista de views.js
             const deleteButton = article.querySelector("button");
             if(deleteButton){

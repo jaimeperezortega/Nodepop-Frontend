@@ -120,6 +120,27 @@ article{
   min-width: 600px;
 }
 
+.ad-text{
+  padding-top:10px;
+  padding-bottom:10px;
+  font-style: italic;
+  color: darkslategrey;
+}
+
+.venta{
+  color:green;
+}
+
+.compra{
+  color:orangered;
+}
+
+.publish-date{
+  font-size: 11px;
+  color:red;
+  margin-bottom:10px;
+}
+
 /* Titles */
 h1{
     text-align:center;
