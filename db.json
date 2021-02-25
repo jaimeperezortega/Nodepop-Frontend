@@ -1,0 +1,146 @@
+{
+  "ads": [
+    {
+      "name": "Zapatillas Salomon Trail",
+      "price": "20",
+      "onSale": true,
+      "adText": "Están casi sin usar. No puedo utilizarlas porque me quedan un poco grandes",
+      "image": "http://localhost:8000//file-1614064021105.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-23T07:07:01.189Z",
+      "id": 18
+    },
+    {
+      "name": "Cinta para correr",
+      "price": "125",
+      "onSale": false,
+      "adText": "Necesito cinta para correr durante el confinamiento. Debe estar en perfecto estado",
+      "image": "http://localhost:8000//file-1614102427234.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-23T17:47:07.286Z",
+      "id": 19
+    },
+    {
+      "name": "Banco de lumbares",
+      "price": "45",
+      "onSale": true,
+      "adText": "Mi mujer me obliga a venderlo porque dice que le incordia en casa",
+      "image": "http://localhost:8000//file-1614102797728.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-23T17:53:17.747Z",
+      "id": 20
+    },
+    {
+      "name": "Fitball Pilates",
+      "price": "12",
+      "onSale": true,
+      "adText": "Fitball nueva sin estrenar. Añado también la bomba para hincharlo.",
+      "image": "http://localhost:8000//file-1614102834636.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-23T17:53:54.653Z",
+      "id": 21
+    },
+    {
+      "name": "Bicicleta estática",
+      "price": "80",
+      "onSale": true,
+      "adText": "Necesito una bicicleta estática para hacer deporte en casa",
+      "image": "http://localhost:8000//file-1614102887013.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-23T17:54:47.070Z",
+      "id": 22
+    },
+    {
+      "name": "banco de abdominales",
+      "price": "35",
+      "onSale": false,
+      "adText": "Compro banco de abdominales para fortalecerme",
+      "image": "http://localhost:8000//file-1614102935809.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-23T17:55:35.852Z",
+      "id": 23
+    },
+    {
+      "name": "Zapatillas New Balance S045",
+      "price": "56",
+      "onSale": true,
+      "adText": "Vendo zapatillas new balance de la talla 44 sin estrenar porque el número me queda grande. Son perfectas para correr trail en terrenos muy técnicos e incluso embarrados",
+      "image": "http://localhost:8000//file-1614189044352.jpg",
+      "userId": 12,
+      "updatedAt": "2021-02-24T17:50:44.380Z",
+      "id": 24
+    },
+    {
+      "name": "Mancuernas",
+      "price": "15",
+      "onSale": false,
+      "adText": "Busco un set de mancuernas en buen estado que me permita ponerme tan fuerte como el profe Alberto. Preferiblemente que no sean de hierro y no falte ninguna en el set.",
+      "image": "http://localhost:8000//file-1614189415483.jpg",
+      "userId": 12,
+      "updatedAt": "2021-02-24T17:56:55.509Z",
+      "id": 25
+    }
+  ],
+  "users": [
+    {
+      "username": "jaimeprueba@gmail.com",
+      "password": "$2b$10$lDCyrGtvVvsApwAC3sT26OQLGuGDwMRdXk.2tmolqgvwliDR8b1mq",
+      "id": 1
+    },
+    {
+      "username": "jaimeprueba2@gmail.com",
+      "password": "$2b$10$lDCyrGtvVvsApwAC3sT26OQLGuGDwMRdXk.2tmolqgvwliDR8b1mq",
+      "id": 2
+    },
+    {
+      "username": "jaimep.ortega@gmail.com",
+      "password": "$2b$10$bHXcw13NL/5S.q3CcRgrT.Q5H029y5W6ufH5it2GtVYb.cLHPdkDC",
+      "id": 3
+    },
+    {
+      "username": "jaimeprueba3@gmail.com",
+      "password": "$2b$10$bHXcw13NL/5S.q3CcRgrT.sYWbDqInIji3CrAlvRV1dJnh5KiPNlC",
+      "id": 4
+    },
+    {
+      "username": "jaimesd@yahoo.es",
+      "password": "$2b$10$bHXcw13NL/5S.q3CcRgrT.iVWYBwcmlTUlHai1PEUNjbX7bIj3bM.",
+      "id": 5
+    },
+    {
+      "username": "axaxax@gmail.com",
+      "password": "$2b$10$bHXcw13NL/5S.q3CcRgrT.sYWbDqInIji3CrAlvRV1dJnh5KiPNlC",
+      "id": 6
+    },
+    {
+      "username": "jaime6@ha.es",
+      "password": "$2b$10$bHXcw13NL/5S.q3CcRgrT.sYWbDqInIji3CrAlvRV1dJnh5KiPNlC",
+      "id": 7
+    },
+    {
+      "username": "jaime11@gmail.com",
+      "password": "$2b$10$bHXcw13NL/5S.q3CcRgrT.sYWbDqInIji3CrAlvRV1dJnh5KiPNlC",
+      "id": 8
+    },
+    {
+      "username": "jaime@wombat.es",
+      "password": "$2b$10$gpGUksIFjBPzLNdMvJENh.8XB1Qwhgsk4KMx72CbWGtAAO9HEqwcy",
+      "id": 9
+    },
+    {
+      "username": "jaimeinventado@jaime.es",
+      "password": "$2b$10$bb0tAStvtxvQtTswPJpQsubx7QiI6Tp0fThJpaMqBuUhx3zvKUWGm",
+      "id": 10
+    },
+    {
+      "username": "jaime@wombat2.es",
+      "password": "$2b$10$6x0Z0rtO66x3wE9RWWOqFeB77I6VPUpemkrnNl3TVixT6nnsgR6Xu",
+      "id": 11
+    },
+    {
+      "username": "jaime@newbalance.es",
+      "password": "$2b$10$6x0Z0rtO66x3wE9RWWOqFequaP3VjEmTNYjd.1rAgJeKYHEgA08ZG",
+      "id": 12
+    }
+  ]
+}
