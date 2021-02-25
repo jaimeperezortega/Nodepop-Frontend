@@ -5,7 +5,15 @@ import {adView} from "../views.js" ;
 
 
 
+
 export default class  AdsListController extends BaseController{
+
+    constructor(element){
+        super(element);
+        this.subscribe(this.events.SEARCH, query=>{
+            this.loadAds(query);
+        });
+    }
 
 
     render(adsList){ //Método para renderizar el listado de anuncios
@@ -14,6 +22,14 @@ export default class  AdsListController extends BaseController{
 
 
             const article = document.createElement("article"); // Creamos el elemento HTML article
+
+            article.addEventListener("mouseover", event =>{
+                article.classList.add("ad-mouse-over");
+            })
+
+            article.addEventListener("mouseout", event =>{
+                article.classList.remove("ad-mouse-over");
+            })
             
             article.addEventListener("click", event=>{
                 console.log(ad.id);
@@ -37,12 +53,12 @@ export default class  AdsListController extends BaseController{
         }
     }
     
-    async loadAds(){ //Método para cargar los anuncios de forma asíncrona a través de mi servicio de DataService
+    async loadAds(query = null){ //Método para cargar los anuncios de forma asíncrona a través de mi servicio de DataService
          
     //Consigo los anuncios a través del método de mi dataService getAds(). Como es asíncrono y lo que me devuelve ese método es una promesa, debo usar await delante. Y al usar await aquí, debo usar async en la funcion
      this.publish(this.events.START_LOADING, {})
      try { // Si el servidor responde (ya sea una respuesta correcta o incorrecta)
-        const adsList= await dataService.getAds();
+        const adsList= await dataService.getAds(query);
         this.render(adsList);
         
 

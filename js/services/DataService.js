@@ -66,11 +66,14 @@ export default{
 
     },
     
-    getAds: async function (){
+    getAds: async function (query=null){
         const currentUser = await this.getUser();
         
       //Aquí solo capturamos el error  cuando el servidor sí responde. Si el servidor no responde, capturaremos ese error desde fuera (en index.js cuando llamamos a este método de nuestro DAta Servie)
-      const url = `${BASE_URL}/api/ads?_sort=id&_order=desc`; //Para ordenar los anuncios de forma descendente (los más nuevos primero) . Para ello, el backend me tiene que permitir ordenarlo de esta forma     
+      let url = `${BASE_URL}/api/ads?_sort=id&_order=desc`; //Para ordenar los anuncios de forma descendente (los más nuevos primero) . Para ello, el backend me tiene que permitir ordenarlo de esta forma   
+      if(query){
+        url += `&q=${query}` // Es la letra q porque así es como está configurado en el backend
+      }  
       const response = await fetch(url);
             if(response.ok){ //Si la respuesta del servidor es correcta (tipo 200)
                 const data = await response.json();

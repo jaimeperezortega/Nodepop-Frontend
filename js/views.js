@@ -19,7 +19,7 @@ export  const adView = (ad)=>{
     }
 
     //<a href = "/ficha-anuncio.html"> </a>
-    return ` <div class="ad">
+    return ` <div class="ad-wrapper">
     <strong class="ad-name" style="font-size:20px; color:black;">${ad.name}</strong>
     <div class="on-sale"  padding-top:10px;">${onSale} ${ad.price} €  </div>
     

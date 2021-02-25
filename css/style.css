@@ -56,6 +56,7 @@
 Contenedor de los anuncios */
 .ads-list{
     margin: 50px;
+    margin-top:30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -76,6 +77,8 @@ article{
   border-color: lightslategray;
   
 }
+
+
 
 .image{
   max-width: 180px;
@@ -107,6 +110,16 @@ article{
     bottom: 20px
 }
 
+.ad-mouse-over{
+  border-width: 2px;
+ cursor:pointer;
+  border-color: green;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 35px;
+  padding-right:35px;
+}
+
 .return-ad-list{
   position:fixed;
     right:20px;
@@ -133,6 +146,11 @@ article{
 
 .compra{
   color:orangered;
+}
+
+.columns{
+  margin-top: 20px;
+  margin-left:50px;
 }
 
 .publish-date{

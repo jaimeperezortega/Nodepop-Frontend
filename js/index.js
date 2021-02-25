@@ -5,6 +5,7 @@ import AdsListController from "./controllers/AdsListController.js";
 import LoaderController from "./controllers/LoaderController.js";
 import ErrorController from "./controllers/ErrorController.js";
 import FixedBottomButtonsController from "./controllers/FixedBottomButtonsController.js";
+import SearchController from "./controllers/SearchController.js";
 
 
 
@@ -27,6 +28,9 @@ window.addEventListener("DOMContentLoaded", async event =>{
 
     const newAdButtons = document.querySelector(".new-ad");
     const newAdButtonsController = new FixedBottomButtonsController(newAdButtons);
+
+    const searchInput= document.querySelector('input[type="search"]');
+    const searchInputController = new SearchController(searchInput);
      
 
 });
