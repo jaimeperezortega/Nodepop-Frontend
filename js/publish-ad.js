@@ -2,6 +2,7 @@ import LoaderController from "./controllers/LoaderController.js";
 import ErrorController from "./controllers/ErrorController.js";
 import SellingAdController from "./controllers/SellingAdController.js";
 import BuyingAdController from "./controllers/BuyingAdController.js";
+import LogOutButtonController from"./controllers/LogOutButtonController.js";
 
 
 
@@ -22,5 +23,8 @@ window.addEventListener("DOMContentLoaded", () =>{
 
     const buyingAdForm = document.querySelector(".buying-form");
     new BuyingAdController(buyingAdForm);
+
+    const logOutButton= document.querySelector(".log-out-button");
+    const logOutButtonController = new LogOutButtonController(logOutButton);
 
 })

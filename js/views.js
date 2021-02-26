@@ -7,6 +7,8 @@ export  const adView = (ad)=>{
     deleteButtonHTML = '<button class="button is-danger is-pulled-right">Borrar</button>';
   }
 
+  // const viewDetailButton = '<button class="view-detail-button button is-link is-pulled-left">Ver Detalle</button>';
+
   let imgHTML = "";
   if(ad.image){
     imgHTML = `<div class ="image"> <img src="${ad.image}"></div>`
@@ -23,8 +25,10 @@ export  const adView = (ad)=>{
     <strong class="ad-name" style="font-size:20px; color:black;">${ad.name}</strong>
     <div class="on-sale"  padding-top:10px;">${onSale} ${ad.price} €  </div>
     
+    
     ${imgHTML}
     ${deleteButtonHTML}
+    
 
     
   
@@ -54,6 +58,8 @@ export  const adDetailedInfo = (ad)=>{
     
     
     ${imgHTML}
+   
+   
     
 
     

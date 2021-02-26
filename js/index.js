@@ -6,7 +6,7 @@ import LoaderController from "./controllers/LoaderController.js";
 import ErrorController from "./controllers/ErrorController.js";
 import FixedBottomButtonsController from "./controllers/FixedBottomButtonsController.js";
 import SearchController from "./controllers/SearchController.js";
-
+import LogOutButtonController from "./controllers/LogOutButtonController.js"
 
 
 window.addEventListener("DOMContentLoaded", async event =>{
@@ -31,6 +31,9 @@ window.addEventListener("DOMContentLoaded", async event =>{
 
     const searchInput= document.querySelector('input[type="search"]');
     const searchInputController = new SearchController(searchInput);
+
+    const logOutButton= document.querySelector(".log-out-button");
+    const logOutButtonController = new LogOutButtonController(logOutButton);
      
 
 });

@@ -120,6 +120,10 @@ export default{
         return localStorage.getItem(TOKEN_KEY);
     },
 
+    deleteToken: function(){
+        localStorage.removeItem(TOKEN_KEY);
+    },
+
     isUserLogged: async function (){
         const token = await this.getToken();
         return token !== null;// Si el token no es nulo, el usuario está autenticado, pero si es nulo no está autenticado. Es una expresión booleana que devuelve true o false

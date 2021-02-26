@@ -23,20 +23,28 @@ export default class  AdsListController extends BaseController{
 
             const article = document.createElement("article"); // Creamos el elemento HTML article
 
-            article.addEventListener("mouseover", event =>{
+    
+
+            article.innerHTML = adView(ad); //Asignamos que su HTML será el definido en la vista de views.js
+            
+
+            const image = article.querySelector(".image");
+
+            image.addEventListener("click", event=>{
+               
+                window.location.href = '/ficha-anuncio.html?id='+ ad.id;
+                event.stopPropagation();
+                
+            });
+
+            image.addEventListener("mouseover", event =>{
                 article.classList.add("ad-mouse-over");
             })
 
-            article.addEventListener("mouseout", event =>{
+            image.addEventListener("mouseout", event =>{
                 article.classList.remove("ad-mouse-over");
             })
-            
-            article.addEventListener("click", event=>{
-                console.log(ad.id);
-                window.location.href = '/ficha-anuncio.html?id='+ ad.id;
-                
-            });
-            article.innerHTML = adView(ad); //Asignamos que su HTML será el definido en la vista de views.js
+
             const deleteButton = article.querySelector("button");
             if(deleteButton){
                 deleteButton.addEventListener("click", async event =>{

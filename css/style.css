@@ -64,8 +64,10 @@ Contenedor de los anuncios */
 
 /* Cada anuncio */
 article{
-  max-width: 400px;
-  min-width: 400px;
+  max-width: 350px;
+  min-width: 350px;
+  max-height: 350px;
+  min-height: 350px;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 30px;
@@ -114,16 +116,17 @@ article{
   border-width: 2px;
  cursor:pointer;
   border-color: green;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 35px;
-  padding-right:35px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-left: 32px;
+  padding-right:32px;
 }
 
 .return-ad-list{
-  position:fixed;
-    right:20px;
-    bottom: 20px
+ 
+    left:100px;
+    bottom: -50px;
+    position:absolute;
 }
 
 .ad-info{
@@ -131,6 +134,8 @@ article{
   justify-content: center;
   max-width: 800px;
   min-width: 600px;
+  min-height:500px;
+  position:relative;
 }
 
 .ad-text{
@@ -157,6 +162,22 @@ article{
   font-size: 11px;
   color:red;
   margin-bottom:10px;
+}
+
+.log-out-button{
+  /* margin-bottom:15px; */
+  margin-right: 20px;
+  
+}
+
+.view-detail{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.log-out-and-search-input{
+  display: flex;
+  flex-direction: row;
 }
 
 /* Titles */
