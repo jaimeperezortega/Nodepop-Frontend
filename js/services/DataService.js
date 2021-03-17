@@ -52,12 +52,24 @@ export default{
 
 
     getSingleAd: async function(){
+        const currentUser = await this.getUser();
         const queryParams = window.location.search.replace('?id=', '');
         const url = `${BASE_URL}/api/ads/${queryParams}`;
         const response = await fetch(url);
             if(response.ok){ 
                 const data = await response.json();
-                return data;        
+                const user = data.user || {};
+               
+                return {
+                    id: data.id,
+                    name: data.name.replace(/(<([^>]+)>)/gi, ""),
+                    onSale: data.onSale,
+                    price: data.price.replace(/(<([^>]+)>)/gi, ""),
+                    adText: data.adText.replace(/(<([^>]+)>)/gi, ""),
+                    updatedAt: data.updatedAt,
+                    image: data.image || null,
+                    canBeDeleted: currentUser ? currentUser.userId === data.userId : false //Operador ternario --> Si currentuser es nulo, canbeDeleted es false. Si currentUser es verdadero se cumple lo que hay después de la interrogación (currentUser.userId === ad.user). Los anuncios van a ser borrables solo si currentUserId coincide con el userId del anuncio en cuestión
+                };        
                 
             } else{ 
                 throw new Error(`HTTP Error: ${response.status}`)
